@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="1100.0" stylesheets="@../css/css.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.modifyProductController">
+    <columnConstraints>
+        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+    </columnConstraints>
+    <rowConstraints>
+        <RowConstraints minHeight="10.0" prefHeight="20.0" vgrow="SOMETIMES" />
+        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+    </rowConstraints>
+    <children>
+        <Label text="Add Product" translateX="50.0" translateY="-30.0">
+            <GridPane.margin>
+                <Insets />
+            </GridPane.margin>
+            <font>
+                <Font name="Arial Bold" size="20.0" />
+            </font>
+        </Label>
+        <Label text="Name" translateX="60.0" translateY="-40.0" GridPane.rowIndex="1">
+            <font>
+                <Font name="Arial" size="14.0" />
+            </font></Label>
+        <Label text="ID" translateX="60.0" translateY="-100.0" GridPane.rowIndex="1">
+            <font>
+                <Font name="Arial" size="14.0" />
+            </font></Label>
+        <Label text="Inventory" translateX="60.0" translateY="20.0" GridPane.rowIndex="1">
+            <font>
+                <Font name="Arial" size="14.0" />
+            </font></Label>
+        <Label text="Price/Cost" translateX="60.0" translateY="80.0" GridPane.rowIndex="1">
+            <font>
+                <Font name="Arial" size="14.0" />
+            </font></Label>
+        <Label text="Max" translateX="60.0" translateY="140.0" GridPane.rowIndex="1">
+            <font>
+                <Font name="Arial" size="14.0" />
+            </font></Label>
+        <TextField fx:id="id" accessibleRole="TOOLTIP" alignment="CENTER" disable="true" editable="false" maxWidth="-Infinity" prefHeight="25.0" prefWidth="190.0" promptText="AUTO-GENERATED ID" translateX="-400.0" translateY="-100.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+            <font>
+                <Font size="14.0" />
+            </font></TextField>
+        <TextField fx:id="name" maxWidth="-Infinity" prefHeight="30.0" prefWidth="190.0" translateX="-400.0" translateY="-40.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+            <font>
+                <Font size="14.0" />
+            </font></TextField>
+        <TextField fx:id="inventorytext" maxHeight="-Infinity" maxWidth="-Infinity" prefWidth="190.0" translateX="-400.0" translateY="20.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+            <font>
+                <Font size="14.0" />
+            </font></TextField>
+        <TextField fx:id="pricecost" maxWidth="-Infinity" prefWidth="190.0" translateX="-400.0" translateY="80.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+            <font>
+                <Font size="14.0" />
+            </font></TextField>
+        <TextField fx:id="max" maxWidth="-Infinity" prefWidth="190.0" translateX="-400.0" translateY="-80.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+            <font>
+                <Font size="14.0" />
+            </font></TextField>
+        <TextField fx:id="min" maxWidth="-Infinity" prefWidth="190.0" translateX="-125.0" translateY="-80.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+            <font>
+                <Font size="14.0" />
+            </font></TextField>
+        <Label text="Min" translateX="-180.0" translateY="-80.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+            <font>
+                <Font name="Arial" size="14.0" />
+            </font></Label>
+        <Button fx:id="saveButton" mnemonicParsing="false" onAction="#saveButtonAction" text="Save" translateX="327.0" translateY="75.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+            <font>
+                <Font size="14.0" />
+            </font>
+        </Button>
+        <Button fx:id="cancelButton" mnemonicParsing="false" onAction="#cancelButtonAction" text="Close" translateX="441.0" translateY="75.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+            <font>
+                <Font size="14.0" />
+            </font>
+        </Button>
+        <TableView fx:id="partsTable" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onSort="#partsTableAction" prefHeight="198.0" prefWidth="374.0" translateX="120.0" translateY="90.0" GridPane.columnIndex="1">
+            <columns>
+                <TableColumn fx:id="partidCol" prefWidth="75.0" text="Part ID" />
+                <TableColumn fx:id="partnameCol" prefWidth="75.0" text="Part Name" />
+                <TableColumn fx:id="invlevelCol" prefWidth="99.0" text="Inventory Level" />
+                <TableColumn fx:id="pricecostCol" prefWidth="124.0" text="Price/Cost per Unit" />
+            </columns>
+        </TableView>
+        <TableView fx:id="associatedPartTable" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onSort="#associatedPartTableAction" prefHeight="198.0" prefWidth="374.0" translateX="120.0" translateY="-95.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+            <columns>
+                <TableColumn fx:id="partidCol2" prefWidth="75.0" text="Part ID" />
+                <TableColumn fx:id="partnameCol2" prefWidth="75.0" text="Part Name" />
+                <TableColumn fx:id="invlevelCol2" prefWidth="100.0" text="Inventory Level" />
+                <TableColumn fx:id="pricecostCol2" prefWidth="123.0" text="Price/Cost per Unit" />
+            </columns>
+        </TableView>
+        <TextField fx:id="searchIDField" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#SearchIDFieldAction" prefHeight="30.0" prefWidth="190.0" promptText="Search by  Part ID or Name" translateX="305.0" translateY="-35.0" GridPane.columnIndex="1">
+            <font>
+                <Font size="14.0" />
+            </font>
+        </TextField>
+        <Button fx:id="addButton" mnemonicParsing="false" onAction="#addButtonAction" text="Add" translateX="441.0" translateY="-2.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+            <font>
+                <Font size="14.0" />
+            </font>
+        </Button>
+        <Button fx:id="removeAssociatedButton" mnemonicParsing="false" onAction="#removeAssociatedButtonAction" text="Remove Associated Part" translateX="327.0" translateY="35.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+            <font>
+                <Font size="14.0" />
+            </font>
+        </Button>
+    </children>
+</GridPane>

@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="570.0" prefWidth="820.0" stylesheets="@../css/css.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.modifyPartController">
+    <columnConstraints>
+        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+    </columnConstraints>
+    <rowConstraints>
+        <RowConstraints minHeight="10.0" prefHeight="20.0" vgrow="SOMETIMES" />
+        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+    </rowConstraints>
+    <children>
+        <Label text="Add Part" translateX="50.0">
+            <GridPane.margin>
+                <Insets />
+            </GridPane.margin>
+            <font>
+                <Font name="Arial Bold" size="20.0" />
+            </font>
+        </Label>
+        <RadioButton fx:id="outsourcedButton" mnemonicParsing="false" onAction="#changeText" text="Outsourced" translateX="150.0" GridPane.columnIndex="1">
+            <toggleGroup>
+                <ToggleGroup fx:id="toggleGroup1" />
+            </toggleGroup>
+            <font>
+                <Font size="14.0" />
+            </font></RadioButton>
+        <RadioButton fx:id="inhouseButton" mnemonicParsing="false" onAction="#changeTextTwo" text="In-House" toggleGroup="$toggleGroup1" translateX="-45.0" GridPane.columnIndex="1">
+            <font>
+                <Font name="Arial" size="14.0" />
+            </font></RadioButton>
+        <Label text="Name" translateX="60.0" translateY="-50.0" GridPane.rowIndex="1">
+            <font>
+                <Font name="Arial" size="14.0" />
+            </font></Label>
+        <Label text="ID" translateX="60.0" translateY="-100.0" GridPane.rowIndex="1">
+            <font>
+                <Font name="Arial" size="14.0" />
+            </font></Label>
+        <Label text="Inventory" translateX="60.0" GridPane.rowIndex="1">
+            <font>
+                <Font name="Arial" size="14.0" />
+            </font></Label>
+        <Label text="Price/Cost" translateX="60.0" translateY="50.0" GridPane.rowIndex="1">
+            <font>
+                <Font name="Arial" size="14.0" />
+            </font></Label>
+        <Label text="Max" translateX="60.0" translateY="100.0" GridPane.rowIndex="1">
+            <font>
+                <Font name="Arial" size="14.0" />
+            </font></Label>
+        <Label fx:id="textField" text="Machine ID" translateX="60.0" translateY="-45.0" GridPane.rowIndex="2">
+            <font>
+                <Font name="Arial" size="14.0" />
+            </font></Label>
+        <TextField fx:id="id" accessibleRole="TOOLTIP" alignment="CENTER" disable="true" editable="false" maxWidth="-Infinity" prefHeight="25.0" prefWidth="215.0" promptText="AUTO-GENERATED ID" translateX="-220.0" translateY="-100.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+            <font>
+                <Font size="14.0" />
+            </font></TextField>
+        <TextField fx:id="name" maxWidth="-Infinity" prefHeight="30.0" prefWidth="215.0" translateX="-220.0" translateY="-50.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+            <font>
+                <Font size="14.0" />
+            </font></TextField>
+        <TextField fx:id="inventorytext" maxHeight="-Infinity" maxWidth="-Infinity" prefWidth="215.0" translateX="-220.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+            <font>
+                <Font size="14.0" />
+            </font></TextField>
+        <TextField fx:id="pricecost" maxWidth="-Infinity" prefWidth="215.0" translateX="-220.0" translateY="50.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+            <font>
+                <Font size="14.0" />
+            </font></TextField>
+        <TextField fx:id="machineid" maxWidth="-Infinity" prefWidth="215.0" translateX="-220.0" translateY="-45.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+            <font>
+                <Font size="14.0" />
+            </font></TextField>
+        <TextField fx:id="max" maxWidth="-Infinity" prefWidth="215.0" translateX="-220.0" translateY="-95.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+            <font>
+                <Font size="14.0" />
+            </font></TextField>
+        <TextField fx:id="min" maxWidth="-Infinity" prefWidth="215.0" translateX="110.0" translateY="-95.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+            <font>
+                <Font size="14.0" />
+            </font></TextField>
+        <Label text="Min" translateX="40.0" translateY="-95.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+            <font>
+                <Font name="Arial" size="14.0" />
+            </font></Label>
+        <Button fx:id="saveButton" mnemonicParsing="false" onAction="#saveButtonAction" text="Save" translateY="30.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+            <font>
+                <Font size="14.0" />
+            </font>
+        </Button>
+        <Button fx:id="cancelButton" mnemonicParsing="false" onAction="#cancelButtonAction" text="Close" translateX="70.0" translateY="30.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+            <font>
+                <Font size="14.0" />
+            </font>
+        </Button>
+    </children>
+</GridPane>
